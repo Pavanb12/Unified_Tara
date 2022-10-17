@@ -44,7 +44,7 @@ public class AddProduct_Page extends BasePage{
 	@FindBy(xpath="//android.widget.ImageView[@index='1']")
     public WebElement category_item_DoneButton;
 	
-	@FindBy(xpath="//android.widget.EditText[@index='7' or @index='6']") 
+	@FindBy(xpath="//android.widget.EditText[@@index='6']") 
     public WebElement Description; 
 	
 	@FindBy(xpath="//android.widget.ImageView[@index='2']")
@@ -202,14 +202,16 @@ public void NavigationTo_Orders() throws InterruptedException {
 
 		aDriver.hideKeyboard();
 
-		Thread.sleep(2000);
-		//action1.tap(948,2152).perform();
-				
-	    //action.longPress(954, 2084).release().perform();
-        waitForElementforType(Description, 20, "description");
+		TouchAction action = new TouchAction(aDriver);
+        int x = aDriver.manage().window().getSize().getWidth()/2;
+        int y = aDriver.manage().window().getSize().getHeight()/2;
+        action.longPress(x, y).moveTo(x, y-(y)).release().perform();
+        Thread.sleep(4000);
+	     
+    //    waitForElementforType(Description, 20, "description");
 
 		aDriver.hideKeyboard();
-		//action1.tap(990,2150).perform();
+		 
 		waitForElementforClick(Done_Button, 10);
 		String toastmessage=captureToastmessage();
 		if(toastmessage.toLowerCase().contains("Added Successfully".toLowerCase())) 
@@ -249,7 +251,7 @@ public void NavigationTo_Orders() throws InterruptedException {
 		typeText(ItemCount,"20");
 		aDriver.hideKeyboard();
 		Thread.sleep(1000);
-		typeText(Description,"description of product edited");
+	//	typeText(Description,"description of product edited");
 		aDriver.hideKeyboard();
 		waitForElementforClick(Done_Button, 10);
 		String toastmessageEdit=captureToastmessage();
@@ -322,17 +324,17 @@ public void NavigationTo_Orders() throws InterruptedException {
         simpleAlert.accept();
         System.out.println("Unexpected alert accepted");
         } catch (Exception e) {
-        System.out.println("unexpected alert not present");
-    }     
+       System.out.println("unexpected alert not present");
+         
 		Thread.sleep(2000);
 		aDriver.findElementByXPath(" //android.widget.TextView[contains(@text,\"sample_updated20PRODUCTS 2.CSV\")]").click();
-	//	aDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.LinearLayout").click();
+ 	//	aDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.LinearLayout").click();
 		 test.log(LogStatus.INFO, "Selected file");
 		 
     	
 	   	
 		waitForElementforClick(uploadButtonele, 20);
-
+        }
 	   	Thread.sleep(3000);
 	   	String toastmessagenamerequired=captureToastmessage();
 		test.log(LogStatus.INFO, toastmessagenamerequired);
@@ -387,7 +389,7 @@ public void AddProductWithoutName() throws InterruptedException
 	aDriver.hideKeyboard();
 
 	Thread.sleep(2000);
-    waitForElementforType(Description, 20, "description of productname1");
+  //  waitForElementforType(Description, 20, "description of productname1");
 
 	aDriver.hideKeyboard();
 	waitForElementforClick(Done_Button, 10);
@@ -622,7 +624,7 @@ public void AddProductfororderoutofstock(String productname, String price, Strin
         waitForElementforClick(Done_Button, 10);
         Thread.sleep(7000);
         aDriver.navigate().back();
-        waitForElementforClick(POS, 30);
+       // waitForElementforClick(POS, 30);
         Thread.sleep(2000);
         }catch(Exception e)
     	{

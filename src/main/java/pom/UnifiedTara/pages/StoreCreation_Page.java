@@ -132,12 +132,12 @@ public class StoreCreation_Page extends BasePage {
 		 waitForElementforClick(SkipCreateWebStore, 20);
 		 waitForElementforClick(StoreLogo, 20);
 		 waitForElementforClick(Gallary, 20);
-		 waitForElementforClick(Select_img, 20);
-		 waitForElementforClick(Crop, 20);
+		 waitForElementforClick(Select_img, 30);
+		 waitForElementforClick(Crop, 30);
 		Thread.sleep(3000);
-		waitForElementforClick(StoreBanner, 20);
-		waitForElementforClick(Gallary, 20);
-		waitForElementforClick(Select_img, 20);
+		waitForElementforClick(StoreBanner, 30);
+		waitForElementforClick(Gallary, 30);
+		waitForElementforClick(Select_img, 30);
 		waitForElementforClick(Crop, 20);
 		Thread.sleep(3000);
 		waitForElementforClick(Store_Name, 20);
@@ -150,7 +150,7 @@ public class StoreCreation_Page extends BasePage {
 		Thread.sleep(5000);
 		click(subcategory);
 		Thread.sleep(5000);
-		waitForElementforClick(SubCategory_Fruits, 10);
+		waitForElementforClick(SubCategory_Fruits, 20);
 		click(DoneButton);
 	//	typeText(Name,"Vardhan");
 		aDriver.hideKeyboard();

@@ -107,23 +107,7 @@ public void navigateToSwitchuser() throws InterruptedException {
 		
 		test.log(LogStatus.INFO, "Navigating to add Payment OPtion ");
 		Thread.sleep(10000);
-
-//		if(isElementDisplayed(mngcalls_allow_button))
-//		{	
-//		   System.out.println("in if block");
-//		   click(mngcalls_allow_button);
-//  	  	   click(mngSMS_allow_button);
-//		   System.out.println("clicked on calls allow");
-//	
-//		}
-//
-//	    if(isElementDisplayed(Verify_SMS_button))
-//	    {
-//		     waitForElement(Verify_SMS_button, 20);
-//			Alert alert = aDriver.switchTo().alert(); 
-//		     alert.accept();
-//	    }
-	    
+ 
 		waitForElementforClick(Proceed_Button, 20);
 
 		if(isElementDisplayed(mngcalls_allow_button))

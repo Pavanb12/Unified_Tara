@@ -27,7 +27,7 @@ public class Promotion_Page extends BasePage {
 	    @FindBy(xpath="//android.widget.EditText[@index='3']")
 	    public WebElement Title;
 	    
-	    @FindBy(xpath="//android.widget.EditText[@index='5']")
+	    @FindBy(xpath="(//android.widget.EditText)[2]")
 	    public WebElement Description;
 	    
 	    @FindBy(xpath="//android.view.View[@index='7']")
@@ -36,13 +36,13 @@ public class Promotion_Page extends BasePage {
 	    @FindBy(xpath="//android.view.View[@index='2']")
 	    public WebElement SelectBackgroudColor;
 	    	    
-	    @FindBy(xpath="//android.view.View[@index='14']")
+	    @FindBy(xpath="//android.view.View[@index='12']")
 	    public WebElement StartDate;
 	    
 	    @FindBy(xpath="//android.widget.Button[@index='6']")
 	    public WebElement Ok_Calender;
 	 	    
-	    @FindBy(xpath="//android.view.View[@index='15']")
+	    @FindBy(xpath="//android.view.View[@index='13']")
 	    public WebElement EndDate;
 	    
 	    @FindBy(xpath="//android.widget.Button[@index='3']")
@@ -78,9 +78,9 @@ public class Promotion_Page extends BasePage {
 	  	        typeText(Description, "Description of Promotion1");
 	  	        aDriver.hideKeyboard();
 
-	  	        waitForElementforClick(BackgroudColor, 10);
-	  	        Thread.sleep(200);
-	  	        waitForElementforClick(SelectBackgroudColor, 10);
+//	  	        waitForElementforClick(BackgroudColor, 10);
+//	  	        Thread.sleep(200);
+//	  	        waitForElementforClick(SelectBackgroudColor, 10);
 
 	  	       
 	  	        waitForElementforClick(StartDate, 20);
@@ -115,7 +115,7 @@ public class Promotion_Page extends BasePage {
 	  	        Thread.sleep(2000);
 	  	        waitForElementforClick(Continue_button, 10);
 	            String pagesource=aDriver.getPageSource();
-	  	        System.out.println(pagesource);
+	  	   //     System.out.println(pagesource);
 	  	  		if(pagesource.toLowerCase().contains("DemoPromotion".toLowerCase())) 
 	  		{
 	  			reportPass("Promotion Added");

@@ -13,7 +13,7 @@ import pom.UnifiedTara.pages.base.BasePage;
 public class POS_Order extends BasePage{
 	
 
-	@FindBy(xpath="//android.widget.ImageView[@content-desc=\"POS\"]")
+	@FindBy(xpath="//android.widget.ImageView[@content-desc='POS']")
     public WebElement POS;  
 	
 	@FindBy(xpath="(//android.widget.ImageView)[3]")
